@@ -2,10 +2,30 @@
 <html>
   <head>
     <title></title>
+    <link rel="stylesheet" href="/styles.css" type='text/css'>
   </head>
 
   <body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Sinatra Playlist</h1>
+    </div>
 
-    <%= yield %>
+    <div class="menu">
+      <p><a href="/songs">All Songs</a></p>
+      <p><a href="/artists">All Artists</a></p>
+      <p><a href="/genres">All Genres</a></p>
+      <p><a href="/songs/new">Create New Entry</a></p>
+    </div>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <h5>Sarli Productions ;)</h5>
+    </div>
+
+  </div>
   </body>
 </html>
