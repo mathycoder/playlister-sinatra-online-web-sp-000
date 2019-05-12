@@ -9,20 +9,31 @@ html, body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1px;
+    grid-template-columns: 100px repeat(11, 1fr);
     grid-template-rows: 80px 100% 100px;
 }
 
 .header {
+    display: flex;
     grid-column: span 12;
     background-color: #E1EF86;
     color: #62B49A;
-    text-align: center;
+    justify-content: space-around;
+}
+
+.header#search {
 
 }
 
+.header h1 a {
+  text-decoration: none;
+}
+
+
+
 .menu {
-    grid-column: span 2;
+    grid-column: span 1;
     background-color: #62B49A;
     color: #FFFFFF;
 }
@@ -77,4 +88,39 @@ html, body {
   text-align: right;
   margin-right: 50px;
   margin-top: 40px;
+}
+
+@media screen and (max-width: 880px) {
+
+    .wrapper {
+      display: grid;
+      grid-gap: 1px;
+      grid-template-columns: 100px repeat(11, 1fr);
+      grid-template-rows: 80px 80px 100% 100px;
+    }
+
+    .header {
+        grid-column: span 12;
+    }
+
+    .menu {
+      display: flex;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column: span 12;
+    }
+
+    .menu p {
+      margin-top: 20px;
+      flex: 1;
+    }
+
+    .content {
+        grid-column: span 12;
+        column-count: 1;
+    }
+
+    .footer {
+      grid-column: span 12;
+    }
 }

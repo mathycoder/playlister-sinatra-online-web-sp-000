@@ -16,14 +16,23 @@
 
   <label>Select an Artist</label>
 
+<!--
   <%@artists.each do |artist| %>
     <input type='checkbox' name="artist[id]" value="<%=artist.id%>" id="<%=artist.name%>"><%=artist.name%></input>
 
   <% end %>
 
+-->
+<select name="artist_id">
+  <option value="None"></option>
+<%@artists.each do |artist| %>
+  <option value="<%=artist.id%>"><%=artist.name%></option>
+<% end %>
+</select>
+
   <br><br>
 
-  <label>Or Enter a new Artist: </label>
+  <label>or enter a new Artist: </label>
   <input type="text" name="artist[name]" id="Artist Name"><br><br>
 
   <input type="submit" value="Create Song"/>

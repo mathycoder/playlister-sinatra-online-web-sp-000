@@ -8,14 +8,24 @@
   <body>
   <div class="wrapper">
     <div class="header">
-      <h1>Sinatra Playlist</h1>
+      <div id="title">
+        <h1><a href="/">Sinatra Playlist</a></h1>
+      </div>
+      <div id="search">
+        <h3>Search:
+          <form method="POST" action="/search">
+            <input type="text" name="query">
+            <input type="submit" value="Search">
+          </form>
+        </h3>
+      </div>
     </div>
 
     <div class="menu">
-      <p><a href="/songs">All Songs</a></p>
-      <p><a href="/artists">All Artists</a></p>
-      <p><a href="/genres">All Genres</a></p>
-      <p><a href="/songs/new">Create New Entry</a></p>
+        <p><a href="/songs">All Songs</a></p>
+        <p><a href="/artists">All Artists</a></p>
+        <p><a href="/genres">All Genres</a></p>
+        <p><a href="/songs/new">Create New Entry</a></p>
     </div>
 
     <div class="content">
