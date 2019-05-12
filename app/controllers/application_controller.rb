@@ -11,17 +11,15 @@ class ApplicationController < Sinatra::Base
 
   post '/search' do
     term = params[:query].downcase
-    artist = Artist.all.find {|artist| artist.name.downcase.include?(term)}
-    song = Song.all.find {|song| song.name.downcase.include?(term)}
-    genre = Genre.all.find {|genre| genre.name.downcase.include?(term)}
-    if artist
-      redirect "/artists/#{artist.slug}"
-    elsif song
-      redirect "/songs/#{song.slug}"
-    elsif genre
-      redirect "/genres/#{genre.slug}"
-    else
-      erb :nothing
-    end
+    @artists = []
+    @songs = []
+    @genres = []
+    @artists << Artist.all.select {|artist| artist.name.downcase.include?(term)}
+    @songs << Song.all.select {|song| song.name.downcase.include?(term)}
+    @genres << Genre.all.select {|genre| genre.name.downcase.include?(term)}
+    @artists = @artists.flatten
+    @genres = @genres.flatten
+    @songs = @songs.flatten
+    erb :search
   end
 end

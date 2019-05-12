@@ -1,0 +1,20 @@
+<h1>Search Results</h1>
+
+<h3>Songs</h3><h5>
+<% @songs.each do |song| %>
+  <a href="/songs/<%=song.slug%>"><%=song.name%></a><br>
+<% end %></h5>
+
+<h3>Artists</h3><h5>
+<% @artists.each do |artist| %>
+  <a href="/artists/<%=artist.slug%>"><%=artist.name%></a><br>
+<% end %></h5>
+
+<h3>Genres</h3><h5>
+<% @genres.each do |genre| %>
+  <a href="/genres/<%=genre.slug%>"><%=genre.name%></a><br>
+<% end %></h5>
+
+<h3 class="hideme">. </h3>
+<h3 class="hideme">. </h3>
+<h3 class="hideme">. </h3>

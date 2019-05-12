@@ -6,6 +6,9 @@ html, body {
   font-family: georgia, sans-serif;
 }
 
+.hideme {
+  color: white;
+}
 
 .wrapper {
     display: grid;

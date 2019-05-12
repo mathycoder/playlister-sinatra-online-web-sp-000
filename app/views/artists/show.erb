@@ -1,12 +1,17 @@
 <h1><%=@artist.name%></h1>
 
-<h3>Genres:
+<h3>Genres:</h3>
+<h5>
   <% @artist.genres.uniq.each do |genre| %>
     <a href="/genres/<%=genre.slug%>"><%=genre.name%></a>
   <% end %>
-</h3>
+</h5>
 
-<h3>Songs:<br>
+<h3>Songs:</h3><h5>
   <% @artist.songs.uniq.each do |song| %>
     <a href="/songs/<%=song.slug%>"><%=song.name%></a><br>
-  <% end %>
+  <% end %></h5>
+<h3 class="hideme">. </h3>
+<h3 class="hideme">. </h3>
+<h3 class="hideme">. </h3>
+<h3 class="hideme">. </h3>
