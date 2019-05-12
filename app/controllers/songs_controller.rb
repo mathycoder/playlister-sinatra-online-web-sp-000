@@ -36,13 +36,7 @@ class SongsController < ApplicationController
     if params[:artist][:name] == ""
       @song.artist = Artist.find(params[:artist_id])
     else
-      if Artist.find_by(name: params[:artist][:name])
-        artist = Artist.find_by(name: params[:artist][:name])
-      else
-        artist = Artist.create(name: params[:artist][:name])
-      end
-      @song.artist = artist
-      artist.save
+      @song.artist = Artist.find_or_create_by(name: params[:artist][:name])
     end
     @song.save
     flash[:message] = "Successfully created song."
