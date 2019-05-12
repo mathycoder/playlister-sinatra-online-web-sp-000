@@ -9,9 +9,10 @@ html, body {
 
 .wrapper {
     display: grid;
+    height: 100%;
     grid-gap: 1px;
     grid-template-columns: 100px repeat(11, 1fr);
-    grid-template-rows: 80px 100% 100px;
+    grid-template-rows: 80px auto 100px;
 }
 
 .header {
@@ -22,15 +23,18 @@ html, body {
     justify-content: space-around;
 }
 
-.header#search {
-
-}
 
 .header h1 a {
   text-decoration: none;
 }
 
+.header#title {
+  flex: 1;
+}
 
+.header#search{
+  flex: 2;
+}
 
 .menu {
     grid-column: span 1;
@@ -54,6 +58,7 @@ html, body {
 }
 
 .content {
+    min-height: 430px;
     background-color: white;
     grid-column: span 10;
     overflow: scroll;
@@ -96,7 +101,7 @@ html, body {
       display: grid;
       grid-gap: 1px;
       grid-template-columns: 100px repeat(11, 1fr);
-      grid-template-rows: 80px 80px 100% 100px;
+      grid-template-rows: 80px 80px auto 100px;
     }
 
     .header {
